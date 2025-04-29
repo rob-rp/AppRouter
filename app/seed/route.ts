@@ -104,7 +104,7 @@ async function seedRevenue() {
 export async function GET() {
   try {
     //commented out this part due to ESLint error
-    /*const _result = */ await sql.begin((_sql) => [
+    /*const _result = */ await sql.begin(() => [
       seedUsers(),
       seedCustomers(),
       seedInvoices(),

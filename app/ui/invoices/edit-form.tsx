@@ -21,7 +21,8 @@ export default function EditInvoiceForm({
 }) {
   const initialState: State = { message: null, errors: {} };
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
-  const [_state, formAction] = useActionState(updateInvoiceWithId, initialState);
+  const [, formAction] = useActionState(updateInvoiceWithId, initialState);
+// [state, formAction] - state in the line above is not being used anywhere else so we can delete it for now and leave a comma(,) to tell javascritp that we are not using the first parameter of the function. This is a common pattern in React to avoid unused variable warnings.
 
   return (
     <form action={formAction}>

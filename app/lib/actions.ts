@@ -64,7 +64,8 @@ export async function createInvoice(prevState: State, formData: FormData) {
       VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
   } 
-  catch (_error) {
+  catch (error) {
+    console.error(error) //logging the error to clear eslint warnings
     return {
       message: 'Database Error: Failed to Create Invoice.',
     };
