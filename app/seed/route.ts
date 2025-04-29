@@ -103,12 +103,13 @@ async function seedRevenue() {
 
 export async function GET() {
   try {
-    // const result = await sql.begin((sql) => [
-    //   seedUsers(),
-    //   seedCustomers(),
-    //   seedInvoices(),
-    //   seedRevenue(),
-    // ]);
+    //commented out this part due to ESLint error
+    /*const _result = */ await sql.begin((_sql) => [
+      seedUsers(),
+      seedCustomers(),
+      seedInvoices(),
+      seedRevenue(),
+    ]);
 
     
     return Response.json({ message: 'Database seeded successfully' });
